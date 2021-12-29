@@ -1,2 +1,28 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<br />
+<%= link_to("Add New Author ",'/authors/new') %> |
+<%= link_to("Add New Book ",'/books/new') %> |
+<%= link_to("Book List ",'/books') %>
+<h1>Book Detail Info</h1>
+<table>
+  <thead>
+   <tr>
+    <th class="table_heading"> Name</th>
+     <th class="table_heading"> Author Name</th>
+     <th class="table_heading"> Comments</th>
+  </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td class="table_data"><%= @book.title %></td>
+        <td class="table_data"><%= @book.author.name %></td> 
+        <% @book.comments.each do |comment| %>
+          <td class="table_data"><%= comment.body %></td>
+        <% end %>
+        
+      </tr>
+  </tbody>
+
+</table>
+<%= link_to "New comment", new_book_comment_path(@book) %>
+
+<br>
