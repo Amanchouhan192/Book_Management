@@ -1,0 +1,8 @@
+<br />
+<h1>Create New Author </h1>
+<%= form_for @author do |form| %>
+	<%= form.label :name , placeholder:"Author Name" %>
+	<%= form.text_field  :name %>
+	<%= form.submit("Create") %>
+<% end %>
+
