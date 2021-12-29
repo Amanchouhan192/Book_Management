@@ -9,6 +9,7 @@
     <th class="table_heading"> Book Title</th>
     <th class="table_heading"> Author Name</th>
     <th class="table_heading"> Published Date</th>
+    <th class="table_heading"> Action</th>
   </tr>
   </thead>
   <tbody>
@@ -20,6 +21,7 @@
         <td class="table_data"><%= book.title   %></td>
         <td class="table_data"><%= book.author.name  %></td>
         <td class="table_data"><%= book.publish_date.strftime("%B %d %Y") %></td> 
+        <td><%= link_to 'Deatils', book_path(book) %></td>
       </tr>
     <% end %>
   </tbody>
