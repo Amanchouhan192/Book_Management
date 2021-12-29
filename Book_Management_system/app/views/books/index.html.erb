@@ -1,0 +1,29 @@
+<br />
+<%= link_to("Add New Book ",'/books/new') %> |
+<%= link_to("Add New Author ",'/authors/new') %> 
+<h1>Book List</h1>
+<table>
+  <thead>
+   <tr>
+    <th class="table_heading">No.</th>
+    <th class="table_heading"> Book Title</th>
+    <th class="table_heading"> Author Name</th>
+    <th class="table_heading"> Published Date</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% i = 1 %>
+    <% @books.each do |book| %>
+      <tr>
+        <td class="table_data"><%= i %></td>
+        <% i += 1 %>
+        <td class="table_data"><%= book.title   %></td>
+        <td class="table_data"><%= book.author.name  %></td>
+        <td class="table_data"><%= book.publish_date.strftime("%B %d %Y") %></td> 
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
