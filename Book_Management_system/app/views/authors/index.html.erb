@@ -1,0 +1,23 @@
+<br />
+<%= link_to("Add New Author ",'/authors/new') %> 
+<h1>Student</h1>
+<table>
+  <thead>
+   <tr>
+    <th class="table_heading">No.</th>
+    <th class="table_heading"> Name</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% i = 1 %>
+    <% @authors.each do |author| %>
+      <tr>
+        <td class="table_data"><%= i %></td>
+        <% i += 1 %>
+        <td class="table_data"><%= author.name   %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
