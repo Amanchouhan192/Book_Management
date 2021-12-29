@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'authors#index'
   resources :authors
-  resources :books
+  resources :books do 
+    resources :comments
+  end
+
 end
