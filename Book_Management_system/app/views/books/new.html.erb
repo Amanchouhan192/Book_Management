@@ -1,0 +1,12 @@
+<br />
+<h1>Create New Book </h1>
+<%= form_for @book do |form| %>
+	<%= form.label :author_id %>
+    <%= form.select :author_id , @authors.collect{|d| [d.name, d.id]} %><br />
+	<%= form.label :title , placeholder:"Book Name" %>
+	<%= form.text_field :title %><br />
+	<%= form.label :publish_date  %>
+	<%= form.text_field  :publish_date, placeholder:"YY-MM-DD" %><br />
+	<%= form.submit("Create") %>
+<% end %>
+
